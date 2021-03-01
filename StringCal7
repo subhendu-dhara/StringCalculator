@@ -1,0 +1,52 @@
+package StringC;
+import java.util.*;
+
+public class StringCalculator {
+
+	
+	 int Add(String numbers) {
+		
+		 int sum = 0;
+		 String s = "";
+		 String delimComma = "[,;*\\s/'\\[*\\]*]+";
+		 String[] arr1  = numbers.split(delimComma);
+		 
+		 int l = arr1.length;
+		 
+		 if(l>0) {
+			 int i;
+			 for(i = 0; i<l; i++) {
+				 if(Integer.parseInt( arr1[i])>=0 && Integer.parseInt( arr1[i])<=1000)
+				    sum += Integer.parseInt( arr1[i]);
+				 else if(Integer.parseInt( arr1[i])<0)
+					 {	s += arr1[i];
+					 System.out.printf("negatives not allowed:"+ s+'\n');
+					 }
+			 }
+		 
+		 	}
+		return sum;
+		 
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String input;
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter the input string");
+		input = in.nextLine();
+		
+		if(input.isEmpty())
+			System.out.println("Input string is empty.");
+		else {
+				StringCalculator sc = new StringCalculator();
+				int result = sc.Add(input);
+		
+				System.out.printf("Result:"+ result);
+	}
+	}
+
+}
