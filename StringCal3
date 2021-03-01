@@ -1,0 +1,45 @@
+package StringC;
+import java.util.*;
+
+public class StringCalculator {
+
+	
+	 int Add(String numbers) {
+		
+		 int sum = 0;
+		 String delimComma = "[,\\s]+";
+		 String[] arr1  = numbers.split(delimComma);
+		 
+		 int l = arr1.length;
+		 
+		 if(l>0) {
+			 int i;
+			 for(i = 0; i<l; i++) {
+				 sum += Integer.parseInt( arr1[i]); }
+		 
+		 	}
+		return sum;
+		 
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String input;
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter the input string");
+		input = in.nextLine();
+		
+		if(input.isEmpty())
+			System.out.println("Input string is empty.");
+		else {
+				StringCalculator sc = new StringCalculator();
+				int result = sc.Add(input);
+		
+				System.out.println(result);
+	}
+	}
+
+}
