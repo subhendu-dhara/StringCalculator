@@ -1,0 +1,47 @@
+
+import java.util.*;
+
+public class StringCal {
+
+		int Add(String numbers) {
+			
+			 int sum = 0;
+			 String delimComma = "[,]+";
+			 String[] arr  = numbers.split(delimComma);
+			 
+			 int l = arr.length;
+			 
+			 if(l>2) 
+				 System.out.println("Invalid input string!"); 
+			 else if(l==1)
+				 sum = Integer.parseInt(arr[0]);  
+			 else
+				 sum = Integer.parseInt(arr[0])+Integer.parseInt(arr[1]);
+			 
+			 	 System.out.println(sum);
+			 return 0;
+			 
+		}
+		
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			
+			String input;
+			
+			Scanner in = new Scanner(System.in);
+			
+			System.out.println("Enter the input string");
+			input = in.nextLine();
+			
+			if(input.isEmpty())
+				System.out.println("Input string is empty.");
+			else {
+					StringCal sc = new StringCal();
+					
+					sc.Add(input);
+		}
+		}
+
+		
+	}
+
